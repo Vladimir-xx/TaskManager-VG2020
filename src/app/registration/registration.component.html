@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="window">
+
+    <form  action="" class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="email">
+      <label for="email" class="label__login"> Email:</label>
+      <input type="email" name="email" placeholder="name@example.com"  formControlName="email">
+      <div class="invalid" *ngIf="form.get('email').invalid && form.get('email').touched">
+        <small class="email">Введите в поле свой email</small>
+      </div>
+    </div>
+
+    <div class="password">
+      <label for="password">Пароль:</label>
+      <input type="password" name="password" placeholder="password" formControlName="password">
+      <div class="invalid" *ngIf="form.get('password').invalid && form.get('password').touched">
+        <small class="password"> пароль не меньше 6 символов</small>
+      </div>
+    </div>
+
+    <p class="login-submit">
+      <img [src]="img" alt="" [class.green]="form.valid">
+      <button type="submit" class="login-button" [disabled]="form.invalid">Войти</button>
+    </p>
+
+   </form>
+  </div>
+</div>
