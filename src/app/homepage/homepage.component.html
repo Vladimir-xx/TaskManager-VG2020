@@ -1,1 +1,26 @@
-<p>homepage works!</p>
+<div class="body">
+
+  <div class="container">
+    <div class="title">
+      <a href="#"  class="logo">User</a>
+        <div class="tools">
+            <a href="#" mat-mini-fab color="primary" [matMenuTriggerFor]="menutools" ><mat-icon>menu</mat-icon></a>
+            <a href="#"mat-mini-fab color="primary" [matMenuTriggerFor]="homemenu"> <mat-icon>home</mat-icon></a>
+          <mat-menu #homemenu="matMenu">
+            <button mat-menu-item (click)="closeUser()">Выход</button>
+          </mat-menu>
+          <mat-menu #menutools="matMenu" yposition=" above">
+            <button mat-menu-item>настройка 1</button>
+            <button mat-menu-item>настройка 2</button>
+            <button mat-menu-item>настройка 3</button>
+            <button mat-menu-item>настройка 4</button>
+
+          </mat-menu>
+        </div>
+      </div>
+    <hr class="titlt_hr">
+  </div>
+
+
+</div>
+
