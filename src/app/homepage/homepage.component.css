@@ -1,4 +1,4 @@
-
+/*===========================Start==================================*/
 .body{
   opacity: 0.8;
   background: url('https://avatanplus.com/files/resources/original/596314df5dfdb15d2b098899.png') 0 0 no-repeat ;
@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   height: 3rem;
-  /*background-color: #3858ec;*/
+
 }
 titlt_hr{
 
@@ -66,4 +66,143 @@ section {
 .color_icon{
   color: red;
 }
+/*user*/
+.user{
+  display: flex;
+}
+.user img{
+  width: 42px;
+  height: 41px;
+  border-radius: 50%;
+  border: solid deepskyblue 2px;
+}
 
+/*==================================Navigate-Header===================================*/
+.top-menu ul {
+  background: linear-gradient(to top, #b6b6b6 20%, #7e7e7e 50%, #555555 80%);
+  border-radius: 6px;
+
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+
+}
+.menu-main li{
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+}
+a{
+  font-weight:bold;
+  color: #000000;
+  text-decoration: none;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border-right: 1px solid black;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 140px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 0px;
+  overflow: visible;
+  background: linear-gradient(to top, #b6b6b6 20%, #7e7e7e 50%, #555555 80%);
+}
+.current{
+  border-radius:6px 0 0px 6px ;
+}
+.search{
+  float: right;
+  width: 17em;
+  height: 2em;
+  margin-top: 4px;
+  margin-right: 12px;
+  border-radius: 20px;
+  text-align: center;
+  outline: none;
+
+}
+/*=====================================================cardSection-Button============================================*/
+.card-section{
+  max-width: 1000px;
+}
+.card-section hr {
+  width: 100%;
+  margin: 15px;
+  height: 2px;
+  display: inline-block;
+  margin-left: 1px;
+}
+.card_input{
+  position: relative;
+}
+.card_input input{
+  display: block;
+  width: 99.6%;
+  height: 3em;
+  font-size: 14px;
+  font-weight: 700;
+}
+.card_input .input_button{
+  position: absolute;
+  top: 0.7em;
+  right: 1em;
+  width: 140px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  background: rgba(25, 170, 53, 0.63);
+  line-height: 21px;
+
+}
+.input_button:hover{
+  box-shadow: 0 12px 16px 0 rgba(73, 73, 73, 0.08),0 17px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+/*==========================Input-add-task================================*/
+.example-form {
+  width: 100%;
+  background: white;
+
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mat-expansion-panel-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1px 24px;
+  border-radius: inherit;
+  transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card_input[_ngcontent-cum-c100] input[_ngcontent-cum-c100] {
+  display: block;
+  width: 99.6%;
+  height: 1em;
+  font-size: 14px;
+  font-weight: 700;
+}

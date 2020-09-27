@@ -1,26 +1,79 @@
 <div class="body">
-
   <div class="container">
     <div class="title">
-      <a href="#"  class="logo">User</a>
-        <div class="tools">
-            <a href="#" mat-mini-fab color="primary" [matMenuTriggerFor]="menutools" ><mat-icon>menu</mat-icon></a>
-            <a href="#"mat-mini-fab color="primary" [matMenuTriggerFor]="homemenu"> <mat-icon>home</mat-icon></a>
-          <mat-menu #homemenu="matMenu">
-            <button mat-menu-item (click)="closeUser()">Выход</button>
-          </mat-menu>
-          <mat-menu #menutools="matMenu" yposition=" above">
-            <button mat-menu-item>настройка 1</button>
-            <button mat-menu-item>настройка 2</button>
-            <button mat-menu-item>настройка 3</button>
-            <button mat-menu-item>настройка 4</button>
-
-          </mat-menu>
-        </div>
+      <div class="user">
+        <img [src]="img" alt="">
+        <a href="#" class="logo">User</a>
       </div>
+
+      <div class="tools">
+        <a href="#" mat-mini-fab color="primary" [matMenuTriggerFor]="menutools">
+          <mat-icon>menu</mat-icon>
+        </a>
+        <a href="#" mat-mini-fab color="primary" [matMenuTriggerFor]="homemenu">
+          <mat-icon>home</mat-icon>
+        </a>
+        <mat-menu #homemenu="matMenu">
+          <button mat-menu-item (click)="closeUser()">Выход</button>
+        </mat-menu>
+        <mat-menu #menutools="matMenu" yposition=" above">
+          <button mat-menu-item>настройка 1</button>
+          <button mat-menu-item>настройка 2</button>
+          <button mat-menu-item>настройка 3</button>
+          <button mat-menu-item>настройка 4</button>
+        </mat-menu>
+      </div>
+    </div>
+
     <hr class="titlt_hr">
+
+    <nav class="top-menu">
+      <ul class="menu-main">
+
+        <li><a href="#" class="current" mat-flat-button  >Все</a></li>
+        <li><a href="" mat-flat-button>Важные</a></li>
+        <li><a href="" mat-flat-button>Завершенные</a></li>
+        <li><a href="" mat-flat-button>Новые</a></li>
+        <input style="float:right" class="search" type="search" placeholder="поиск" атрибуты>
+      </ul>
+
+    </nav>
+    <!--=============================================Section-2===============================================-->
+
+    <div class="card-section">
+      <div class="card_input">
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <form class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Добавить Задачу</mat-label>
+                    <input matInput placeholder="Задача" >
+                  </mat-form-field>
+
+                </form>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <mat-label>Leave a comment</mat-label>
+                <textarea matInput placeholder="Описание"></textarea>
+              </mat-form-field>
+
+            </form>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <button (click)="addCards()" class="input_button" mat-flat-button>Добавить</button>
+      </div>
+      <hr>
+      <app-card-task *ngFor="let card of cards" [card]="card" ></app-card-task>
+
+    </div>
   </div>
-
-
 </div>
+
+
 
