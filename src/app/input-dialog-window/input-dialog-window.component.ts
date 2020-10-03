@@ -22,7 +22,7 @@ export class InputDialogWindowComponent implements OnInit {
       this.dataservice.addCards(addPost).subscribe( responce => {
         console.log('responce ', responce);
         if (responce == 200){
-          console.log(this.closedModal = true)
+          this.closedModal = true;
         }
       });
   }
