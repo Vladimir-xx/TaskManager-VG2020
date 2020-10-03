@@ -58,7 +58,7 @@ export class HomepageComponent implements OnInit {
 
     });
     dialog.afterClosed().subscribe(responce => {
-console.log(this.getCards())
+this.getCards();
     })
 
   }
