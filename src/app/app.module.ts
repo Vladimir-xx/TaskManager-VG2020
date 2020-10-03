@@ -18,6 +18,11 @@ import { CardTaskComponent } from './card-task/card-task.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
 import {HttpClientModule} from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
+import { InputDialogWindowComponent } from './input-dialog-window/input-dialog-window.component';
+
+
+
 
 
 
@@ -31,7 +36,9 @@ const appRoutes: Routes = [
     AppComponent,
     RegistrationComponent,
     HomepageComponent,
-    CardTaskComponent
+    CardTaskComponent,
+    InputDialogWindowComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,8 @@ const appRoutes: Routes = [
     MatIconModule,
     MatMenuModule,
     MatExpansionModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
 
 
   ],
