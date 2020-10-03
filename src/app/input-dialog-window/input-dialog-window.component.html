@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="input-class">
+      <input type="text" placeholder="заголовок задачи" [(ngModel)]="inputName" >
+      <textarea name="text" id="" cols="30" rows="10" placeholder="описание задачи" [(ngModel)]="inputDescription"></textarea>
+    </div>
+    <div class="button-class">
+      <button (click)="addCards()" [mat-dialog-close]="closedModal" >add</button>
+      <button  mat-dialog-close >close</button>
+    </div>
+</div>
