@@ -44,7 +44,7 @@
     <div class="card-section">
 
       <hr>
-      <app-card-task *ngFor="let card of cards" [card]="card" ></app-card-task>
+      <app-card-task *ngFor="let card of cards" [card]="card" (clickEdit)="openDialog(card)" (clickDel)="delCard(card)" ></app-card-task>
 
     </div>
   </div>

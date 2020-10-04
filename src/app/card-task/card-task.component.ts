@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Note} from '../_model/note';
 
 
@@ -13,12 +13,25 @@ export class CardTaskComponent implements OnInit {
   panelOpenState = false;
 
   @Input() card: Note; // Card task
+  @Output() clickEdit = new EventEmitter();
+  @Output() clickDel = new EventEmitter();
 
 
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log(this.card + 'проекты готовые')
+  constructor() {
   }
 
+  ngOnInit(): void {
+    console.log(this.card + 'проекты готовые');
+  }
+
+  edit() {
+    this.clickEdit.emit();
+  }
+
+
+  delete() {
+    this.clickDel.emit();
+
+
+  }
 }

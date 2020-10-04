@@ -24,4 +24,15 @@ export class DataService {
     return this.http.post<Note>(`${this.api_path}/users/${'wowa-x@mail.ru'}/notes`, addPost);
 
   }
+
+  editCards(addPost: Note, id: number) {
+
+    return this.http.put<Note>(`${this.api_path}/users/${'wowa-x@mail.ru'}/notes/${id}`, addPost);
+
+  }
+
+  delCards(id: number ){
+    return this.http.delete<Note>(`${this.api_path}/users/${'wowa-x@mail.ru'}/notes/${id}`)
+  }
+  
 }

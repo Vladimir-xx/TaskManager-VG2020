@@ -4,6 +4,7 @@ import {DataService} from '../_httpservices/data.service';
 import {Note} from '../_model/note';
 import {MatDialog} from '@angular/material/dialog';
 import {InputDialogWindowComponent} from '../input-dialog-window/input-dialog-window.component';
+import {del} from 'selenium-webdriver/http';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class HomepageComponent implements OnInit {
     private dialog: MatDialog,
     private routhome: Router,
     private dataservice: DataService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.getCards();
@@ -41,26 +43,37 @@ export class HomepageComponent implements OnInit {
     const user = JSON.parse(sessionStorage.getItem('Login'));
 
     this.dataservice.getCards(user.email).subscribe(response => {
-      console.log('zaza', response);
-       this.cards = response;
+
+      this.cards = response;
     });
   }
 
-  openDialog() {
-    const dialog = this.dialog.open(InputDialogWindowComponent, {
-      // data: {
-      //   animal: 'panda'
-      // },
-      // width: '900px',
-      // height: '500px',
-      // hasBackdrop: false
+  openDialog(card?: Note ) {
 
+    const dialog = this.dialog.open(InputDialogWindowComponent, {
+      data: card,
+      hasBackdrop: false
 
     });
     dialog.afterClosed().subscribe(responce => {
-this.getCards();
-    })
 
+      if (responce === 'OK') {
+        this.getCards();
+      }
+
+
+    });
+
+  }
+
+  delCard(card?: Note) {
+
+       this.dataservice.delCards(card.id).subscribe( responce => {
+         console.log('del', responce );
+         if (responce === 200){
+           this.getCards();
+         }
+      });
   }
 }
 

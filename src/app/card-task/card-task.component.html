@@ -1,11 +1,4 @@
-<!--<div class="card_task">-->
 
-  <!--<input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">-->
-  <!--<label for="happy">Статус</label>-->
-  <!--<p>Lorem ipsum dolor sit amet.</p>-->
-  <!--<p class="data">{{ today | date:'short'}}</p>-->
-
-<!--</div>-->
 <mat-accordion>
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
@@ -16,6 +9,8 @@
       <mat-panel-description>
         <p>{{card?.name}}</p>
         <p class="data">{{ card?.createDate | date:'short'}}</p>
+        <button (click)="edit()">edit</button>
+        <button (click)="delete()" >delete</button>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <p>{{card?.description}}</p>
